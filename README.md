@@ -3,34 +3,15 @@
 A learning project for exploratory analysis and, later, model experiments.
 
 ## Structure
-
+### EDA
 - `notebooks/01_eda.ipynb`: exploration, analysis steps, and conclusions.
-- `src/eda/config.py`: dataset column groups.
 - `src/eda/data_preparation.py`: loading, type conversion, and missing-charge handling.
 - `src/eda/summaries.py`: reusable summary tables.
 - `src/eda/visualization.py`: reusable plots.
 - `data/`: input CSV.
 
-## Setup
-
-From the project root, in the Python environment used by your notebook kernel:
-
-```shell
-python -m pip install -e .
-```
-
-Open `notebooks/01_eda.ipynb` and restart its kernel after installation. Run cells
-from top to bottom. Data paths work with a kernel started in either the project
-root or the notebooks directory. The editable installation lets notebooks import
-`eda` without editing `sys.path`. Restart the kernel after changing imported
-functions so it loads their latest definitions.
-
 ## Analysis assumption
 
-The 11 missing `TotalCharges` values occur at zero tenure. The current EDA fills
+* The 11 missing `TotalCharges` values occur at zero tenure. The current EDA fills
 these with zero, assuming new customers have no accumulated charges. This is an
 explicit assumption, rather than a fact established by the dataset.
-
-Model experiments can use a separate notebook. Add training, preprocessing, and
-prediction modules when that work starts; an application entry point is not
-needed for the current EDA.
